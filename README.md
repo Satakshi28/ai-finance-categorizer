@@ -76,10 +76,10 @@ A `sample_transactions.csv` is included for testing.
 ## Architecture
 
 ```
-CSV Upload → Pandas (parse & clean)
+Input → Multi-format Normalization → Preprocessing
                 ↓
-           Groq LLaMA 3.3 70B
-         (batch categorization via prompt)
+         Groq LLaMA 3.3 70B
+    (batch categorization via prompt)
                 ↓
          Anomaly Detection (statistical z-score)
                 ↓
