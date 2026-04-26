@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Get a free Groq API key
-Go to [console.groq.com/keys](console.groq.com/keys) — free, no credit card needed.
+Go to [console.groq.com/keys](https://console.groq.com/keys) — free, no credit card needed.
 
 ### 4. Run the app
 ```bash
