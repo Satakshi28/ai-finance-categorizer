@@ -124,15 +124,15 @@ CATEGORY_COLORS = {
     "Groceries": "#84cc16",
     "Other": "#94a3b8",
 }
-
+def clean_text(desc):
+    return desc.lower().strip()
 # ── Groq categorization ──────────────────────────────────────────────────────
 def categorize_transactions(df: pd.DataFrame, api_key: str) -> pd.DataFrame:
     client = Groq(api_key=api_key)
 
     transactions_text = ""
     for i, row in df.iterrows():
-        transactions_text += f'{i}: "{row["Description"]}" ₹{row["Amount"]} ({row["Type"]})\n'
-
+        transactions_text += f'{i}: "{clean_text(row["Description"])}" ₹{row["Amount"]} ({row["Type"]})\n'
     prompt = f"""You are a financial transaction categorizer. Categorize each transaction below into one of these categories:
 Food & Dining, Shopping, Transport, Entertainment, Utilities & Bills, Health & Medical, Housing & Rent, Education, Income, Travel, Groceries, Other
 
