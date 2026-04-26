@@ -24,7 +24,7 @@ An AI-powered web app that automatically categorizes bank transactions, visualiz
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-finance-categorizer
+git clone https://github.com/Satakshi28/ai-finance-categorizer
 cd ai-finance-categorizer
 ```
 
