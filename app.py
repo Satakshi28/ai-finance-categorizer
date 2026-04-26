@@ -272,7 +272,17 @@ else:
     except Exception as e:
         st.error(f"Error reading CSV: {e}")
         st.stop()
-
+    # Normalize column names across bank formats
+    col_map = {
+    "narration": "Description",
+    "details": "Description",
+    "transaction details": "Description",
+    "debit/credit": "Type",
+    "transaction amount": "Amount",
+    "txn amount": "Amount"
+    }
+    df.rename(columns={c: col_map[c] for c in df.columns
+                   if c.lower() in col_map}, inplace=True)
     df["Amount"] = pd.to_numeric(df["Amount"], errors="coerce").fillna(0)
 
     # Categorize button
