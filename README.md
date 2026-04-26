@@ -3,6 +3,13 @@
 An AI-powered web app that automatically categorizes bank transactions, visualizes spending patterns, and detects anomalies using Groq (LLaMA 3.3 70B).
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-1.32-red) ![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-orange)
+
+## Screenshots
+
+![Overview](screenshot1.png)
+![Charts](screenshot2.png)
+![Anomaly Detection](screenshot3.png)
+
 ## Features
 
 - **AI Categorization** — Groq LLaMA 3.3 70B tags every transaction into 12 categories (Food, Shopping, Transport, etc.)
