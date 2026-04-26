@@ -245,7 +245,7 @@ if not uploaded_file:
     # Landing state
     col1, col2, col3 = st.columns(3)
     features = [
-        ("🤖", "AI Categorization", "Gemini automatically tags every transaction into 12 spending categories"),
+        ("🤖", "AI Categorization", "Groq automatically tags every transaction into 12 spending categories"),
         ("📊", "Spending Dashboard", "Interactive charts — pie, bar, trend — all generated instantly"),
         ("🚨", "Anomaly Detection", "Flags unusual transactions that spike above your normal spending"),
     ]
@@ -284,13 +284,13 @@ else:
         run = st.button("🤖 Categorize with AI")
     with col_info:
         if not api_key:
-            st.warning("Enter your Gemini API key in the sidebar first.")
+            st.warning("Enter your Groq API key in the sidebar first..")
 
     if run:
         if not api_key:
             st.error("API key required.")
         else:
-            with st.spinner("Gemini is reading your transactions..."):
+            with st.spinner("Groq is reading your transactions..."):
                 try:
                     st.session_state.categorized_df = categorize_transactions(df, api_key)
                     st.success(f"✅ Categorized {len(df)} transactions successfully!")
