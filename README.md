@@ -1,12 +1,11 @@
 # 💳 FinSight AI — Financial Transaction Categorizer
 
-An AI-powered web app that automatically categorizes bank transactions, visualizes spending patterns, and detects anomalies using Google Gemini.
+An AI-powered web app that automatically categorizes bank transactions, visualizes spending patterns, and detects anomalies using Groq (LLaMA 3.3 70B).
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-1.32-red) ![Gemini](https://img.shields.io/badge/Gemini-1.5_Flash-orange)
-
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Streamlit](https://img.shields.io/badge/Streamlit-1.32-red) ![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-orange)
 ## Features
 
-- **AI Categorization** — Gemini 1.5 Flash tags every transaction into 12 categories (Food, Shopping, Transport, etc.)
+- **AI Categorization** — Groq LLaMA 3.3 70B tags every transaction into 12 categories (Food, Shopping, Transport, etc.)
 - **Spending Dashboard** — Interactive pie chart, bar chart, and daily trend line
 - **Anomaly Detection** — Flags transactions that spike >2σ above your category average
 - **CSV Export** — Download the categorized data for further analysis
@@ -17,7 +16,7 @@ An AI-powered web app that automatically categorizes bank transactions, visualiz
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Streamlit + Plotly |
-| AI Engine | Google Gemini 1.5 Flash API |
+| AI Engine | Groq LLaMA 3.3 70B |
 | Data Processing | Pandas |
 | Deployment | Streamlit Cloud |
 
@@ -34,8 +33,8 @@ cd ai-finance-categorizer
 pip install -r requirements.txt
 ```
 
-### 3. Get a free Gemini API key
-Go to [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) — free, no credit card needed.
+### 3. Get a free Groq API key
+Go to [console.groq.com/keys](console.groq.com/keys) — free, no credit card needed.
 
 ### 4. Run the app
 ```bash
@@ -45,7 +44,7 @@ streamlit run app.py
 ## Usage
 
 1. Open the app in your browser (default: `http://localhost:8501`)
-2. Paste your Gemini API key in the sidebar
+2. Paste your Groq API key in the sidebar
 3. Upload a CSV with columns: `Date, Description, Amount, Type`
 4. Click **Categorize with AI**
 5. Explore your spending dashboard!
@@ -72,7 +71,7 @@ A `sample_transactions.csv` is included for testing.
 ```
 CSV Upload → Pandas (parse & clean)
                 ↓
-         Gemini 1.5 Flash API
+           Groq LLaMA 3.3 70B
          (batch categorization via prompt)
                 ↓
          Anomaly Detection (statistical z-score)
